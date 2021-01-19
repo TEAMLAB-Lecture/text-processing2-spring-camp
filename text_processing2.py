@@ -79,5 +79,5 @@ def to_camel_case(underscore_str):
         elif underscore_str[i] == '_':
             continue
         else:
-            camelcase_str += underscore_str[i]
+            camelcase_str += underscore_str[i].lower()
     return camelcase_str
