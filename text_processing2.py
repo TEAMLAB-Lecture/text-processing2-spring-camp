@@ -72,9 +72,9 @@ def to_camel_case(underscore_str):
     underscore_str = underscore_str.strip("_")
     if len(underscore_str) == 0:
         return ""
-    camelcase_str = underscore_str[0]
+    camelcase_str = underscore_str[0].lower()
     for i in range(1, len(underscore_str)):
-        if underscore_str[i-1] == '_' and underscore_str[i] >= 'a' and underscore_str[i] <= 'z':
+        if underscore_str[i-1] == '_' and ((underscore_str[i] >= 'a' and underscore_str[i] <= 'z') or (underscore_str[i] >= 'A' and underscore_str[i] <= 'Z')):
             camelcase_str += underscore_str[i].upper()
         elif underscore_str[i] == '_':
             continue
